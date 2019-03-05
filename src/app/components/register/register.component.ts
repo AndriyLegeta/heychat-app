@@ -9,7 +9,7 @@ import {FormGroup, FormBuilder, Validators} from "@angular/forms";
 })
 export class RegisterComponent implements OnInit {
   myGroup: FormGroup;
-  constructor(private authService: AuthService, private formBuilder: FormBuilder) { }
+  constructor(private authService: AuthService, private formBuilder: FormBuilder){}
 
   ngOnInit() {
     this.init()
@@ -27,6 +27,4 @@ export class RegisterComponent implements OnInit {
     this.authService.registerUser(this.myGroup.value).subscribe(data => {console.log(data)}, err => {
       console.log(err);})
   }
-
-
 }
