@@ -1,0 +1,31 @@
+<div class="container">
+  <div class="row">
+    <div id="panel"  class="col s10 offset-s1"></div>
+    <h3 id="title">Create a New Account</h3>
+
+    <form class="col s12" [formGroup]="myGroup" novalidate (ngSubmit)="registerUser()">
+      <div class="row">
+        <div class="input-field col s12">
+          <input id="user_name" type="text" formControlName="name">
+          <label for="user_name">Name</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <input id="email" type="email" formControlName="email">
+          <label for="email">Email</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <input id="password" type="password" formControlName="password">
+          <label for="password">Create password</label>
+        </div>
+      </div>
+      <button id="sub-btn" class="btn waves-effect">
+        SUBSCRIBE
+      </button>
+    </form>
+
+  </div>
+</div>
