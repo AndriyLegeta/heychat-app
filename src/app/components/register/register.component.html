@@ -2,27 +2,38 @@
   <div class="row">
     <div id="panel"  class="col s10 offset-s1"></div>
     <h3 id="title">Create a New Account</h3>
-
-    <form class="col s12" [formGroup]="myGroup" novalidate (ngSubmit)="registerUser()">
+    <div id="errorMsg" *ngIf="errorMessage">
+      <span>{{errorMessage}}</span>
+    </div>
+    <form class="col s12" [formGroup]="registerForm" novalidate (ngSubmit)="registerUser()">
       <div class="row">
         <div class="input-field col s12">
           <input id="user_name" type="text" formControlName="name">
           <label for="user_name">Name</label>
+          <span class="error" *ngIf="!registerForm.controls['name'].valid && registerForm.controls['name'].touched">
+          User name is required!
+          </span>
         </div>
       </div>
       <div class="row">
         <div class="input-field col s12">
           <input id="email" type="email" formControlName="email">
           <label for="email">Email</label>
+            <span class="error" *ngIf="!registerForm.controls['email'].valid && registerForm.controls['email'].touched">
+          Email is required!
+          </span>
         </div>
       </div>
       <div class="row">
         <div class="input-field col s12">
           <input id="password" type="password" formControlName="password">
           <label for="password">Create password</label>
+          <span class="error" *ngIf="!registerForm.controls['password'].valid && registerForm.controls['password'].touched">
+            Password is required!
+          </span>
         </div>
       </div>
-      <button id="sub-btn" class="btn waves-effect">
+      <button id="sub-btn" class="btn waves-effect" [disabled]="!registerForm.valid">
         SUBSCRIBE
       </button>
     </form>

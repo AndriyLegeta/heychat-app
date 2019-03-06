@@ -10,7 +10,7 @@ export class AuthService {
   constructor(private http: HttpClient) { }
 
 registerUser(body): Observable<any>{
-    return this.http.post(`${Hosts.API_HOST}/api/hey-chatapp/register`, {body}, {})
+    return this.http.post(`${Hosts.API_HOST}/api/hey-chatapp/register`, body, {})
 }
 
 
