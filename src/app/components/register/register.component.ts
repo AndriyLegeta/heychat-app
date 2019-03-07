@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {AuthService} from "../../services/auth.service";
 import {FormGroup, FormBuilder, Validators} from "@angular/forms";
 import {Router} from "@angular/router";
+import {TokenService} from "../../services/token.service";
 
 @Component({
   selector: 'app-register',
@@ -11,7 +12,8 @@ import {Router} from "@angular/router";
 export class RegisterComponent implements OnInit {
   registerForm: FormGroup;
   errorMessage: string;
-  constructor(private authService: AuthService, private formBuilder: FormBuilder, private router: Router){}
+  showPreloader = false;
+  constructor(private authService: AuthService, private formBuilder: FormBuilder, private router: Router, private tokenService: TokenService){}
 
   ngOnInit() {
     this.init()
@@ -25,13 +27,16 @@ export class RegisterComponent implements OnInit {
     });
   }
   registerUser(){
-    console.log(this.registerForm.value);
+    this.showPreloader = true;
     this.authService.registerUser(this.registerForm.value).subscribe(data => {
-      console.log(data);
-    this.registerForm.reset();
-      this.router.navigate(['streams']);
-    }, err => {
-      console.log(err)
+      this.tokenService.SetToken(data.token);
+      this.registerForm.reset();
+      setTimeout(()=>{
+        this.router.navigate(['streams']);
+      },2000);
+
+      }, err => {
+      this.showPreloader = false;
       if(err.error.msg){
         this.errorMessage = err.error.msg[0].message;
       }
