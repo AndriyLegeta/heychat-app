@@ -12,7 +12,7 @@ export class StreamsComponent implements OnInit {
   constructor(private tokenService: TokenService, private router: Router) { }
 
   ngOnInit() {
-    this.token = this.tokenService.GetToken();
+    this.token = this.tokenService.GetPayLoad();
     console.log(this.token);
   }
 

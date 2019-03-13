@@ -13,7 +13,7 @@ registerUser(body): Observable<any>{
     return this.http.post(`${Hosts.API_HOST}/api/hey-chatapp/register`, body, {})
 }
 
-  loginUser(body): Observable<any>{
+loginUser(body): Observable<any>{
     return this.http.post(`${Hosts.API_HOST}/api/hey-chatapp/login`, body, {})
   }
 

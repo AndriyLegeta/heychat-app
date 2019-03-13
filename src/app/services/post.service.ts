@@ -10,6 +10,9 @@ export class PostService {
   constructor(private http: HttpClient) { }
 
   addPost(body): Observable<any> {
-    return this.http.post(`${Hosts.API_HOST}/api/hey-chatapp/post/add-post`, body, {})
+    return this.http.post(`${Hosts.API_HOST}/api/hey-chatapp/post/add-post`, body, {});
+  }
+  getAllPosts(): Observable<any> {
+    return this.http.get(`${Hosts.API_HOST}/api/hey-chatapp/posts`);
   }
 }
