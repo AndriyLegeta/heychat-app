@@ -4,11 +4,11 @@
 }
 #sub_btn {
   float: right;
-  background-color: #1de9b6;
+  background-color: #E60000;
   font-weight: 500;
 }
 #title {
-  background-color: #1de9b6;
+  background-color: #E60000;
   color: white;
   padding: 10px;
   margin-top: 0px;
@@ -28,7 +28,7 @@ form {
 }
 
 .indeterminate {
-  background-color: #64b5f6 !important;
+  background-color: #E60000 !important;
 }
 
 .input-field {

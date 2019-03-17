@@ -5,12 +5,12 @@
 }
 
 .liked {
-  color: #64b5f6 !important;
+  color: #E60000 !important;
 }
 
 .title {
   font-weight: bold;
-  color: #64b5f6;
+  color: #E60000;
 }
 
 .time {
@@ -58,7 +58,7 @@
 }
 
 .deleteBtn {
-  background: red !important;
+  background: #E60000 !important;
   border: none !important;
   height: 40px;
 }

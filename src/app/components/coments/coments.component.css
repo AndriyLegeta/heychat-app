@@ -15,10 +15,19 @@ form {
 }
 
 .postBtn {
-  float: right;
   margin-bottom: 5px;
 }
 
-.file-field input[type='file'] {
-  width: 70% !important;
+.title {
+  font-weight: bold;
+  color: #E60000;
+}
+
+.time {
+  font-size: 14px;
+  color: #666565;
+}
+
+.postComment {
+  font-size: 15px;
 }

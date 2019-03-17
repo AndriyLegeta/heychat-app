@@ -1,5 +1,5 @@
 nav {
-  background-color: #1de9b6;
+  background-color: #E60000;
 }
 
 .brand-logo {
@@ -8,7 +8,7 @@ nav {
 }
 
 .navDiv {
-  background-color: #1de9b6;
+  background-color: #E60000;
 }
 
 .nav-content {
@@ -22,17 +22,18 @@ nav {
   text-align: center;
   margin: 0 auto;
   margin-top: 15px;
+
 }
 
 .nav-div img {
-  margin-top: 20px;
+  margin-top: 16px;
   width: 140px;
   height: 140px;
-  border-radius: 35%;
-  border: px solid rgba(255, 255, 255, 0.4);
-  box-shadow: #90a4ae 2px 2px;
+  border-radius: 50%;
+  border: 10px inset darkred;
+  box-shadow: 0 6px 12px 0 rgba(0, 0, 0, 0.2), 0 9px 26px 0 rgba(0, 0, 0, 0.19);
   text-align: center;
-  margin: 0 auto;
+
 }
 
 .profile-name {
@@ -55,7 +56,7 @@ nav {
 .nav-label-icon {
   top: -9px;
   position: relative;
-  background: red;
+  background: #E60000;
   padding: 5px;
   border-radius: 50%;
   width: 40px !important;
@@ -77,21 +78,21 @@ nav {
 }
 
 .title {
-  color: #1de9b6;
+  color: #E60000;
   margin: 0px !important;
   padding: 0px !important;
   font-weight: normal;
 }
 
 .isRead {
-  color: #1de9b6;
+  color: #E60000;
   margin: 0px !important;
   padding: 0px !important;
   font-weight: normal;
 }
 
 .unread {
-  color: #1de9b6;
+  color: #E60000;
   margin: 0px !important;
   padding: 0px !important;
   font-weight: bold;
@@ -107,7 +108,7 @@ nav {
 }
 
 .material-icons {
-  color: #1de9b6 !important;
+  color: #E60000 !important;
   cursor: pointer;
 }
 
@@ -117,7 +118,7 @@ nav {
 
 .markAll {
   color: #ffffff;
-  background: #1de9b6 !important;
+  background: #E60000 !important;
 }
 
 li.dropdown-button {
