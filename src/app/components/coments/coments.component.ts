@@ -49,7 +49,7 @@ export class ComentsComponent implements OnInit {
   }
   GetPost(){
     this.postService.getPost(this.postId).subscribe(data =>{
-      console.log(data)
+      console.log(data);
         this.post = data.post.post;
         this.commentsArray = data.post.comments.reverse();
     });

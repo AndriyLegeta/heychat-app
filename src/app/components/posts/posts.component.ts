@@ -1,9 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {FormGroup, FormBuilder, Validators} from "@angular/forms";
 import {PostService} from "../../services/post.service";
 import * as moment from "moment";
 import {Socket} from 'ngx-socket-io';
-import _date = moment.unitOfTime._date;
 import _ from 'lodash';
 import {TokenService} from "../../services/token.service";
 import {Router} from "@angular/router";
@@ -30,8 +28,14 @@ export class PostsComponent implements OnInit {
     });
   }
   AllPosts(){
-    this.postService.getAllPosts().subscribe(data=>
-      this.posts = data.posts)
+    this.postService.getAllPosts().subscribe(data=>{
+        this.posts = data.posts
+    }, err=> {
+      if(err.error.token === null){
+        this.tokenService.DeleteToken();
+        this.router.navigate(['']);
+      }
+    })
   }
   TimeFromNow(time){
     return moment(time).fromNow();

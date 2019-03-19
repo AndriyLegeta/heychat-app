@@ -1,4 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
 .tabs .indicator{
-  background: #E60000;
+  background: #E60000 !important;
+}
+.btn{
+  background: #E60000 !important;
+}
+.btn:hover{
+  background: #ff1744!important;
 }

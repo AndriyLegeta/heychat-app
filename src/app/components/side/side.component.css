@@ -7,3 +7,22 @@ a{
 .active{
   background-color: #E60000;
 }
+.material-icons{
+  color: #E60000;
+}
+.active .material-icons{
+  color: #FFFFFF;
+}
+.collection-item.active {
+  background: #E60000;
+}
+.row span{
+  font-weight: bold;
+  font-size: 12px;
+}
+.num{
+  color: #E60000;
+  margin: 0;
+  font-weight: bold;
+  font-size: 16px;
+}
