@@ -13,6 +13,14 @@ export class UserService {
    return this.http.get(`${Hosts.API_HOST}/api/hey-chatapp/users`);
   }
 
+  GetUserById(id): Observable<any>{
+    return this.http.get(`${Hosts.API_HOST}/api/hey-chatapp/users/${id}`);
+  }
+
+  GetUserByName(name): Observable<any>{
+    return this.http.get(`${Hosts.API_HOST}/api/hey-chatapp/users/${name}`);
+  }
+
   FollowUser(id): Observable<any>{
     return this.http.post(`${Hosts.API_HOST}/api/hey-chatapp/followe-user`,{
       userFollowed: id

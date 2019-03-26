@@ -11,17 +11,25 @@ import {TokenService} from "../../services/token.service";
 export class PeopleComponent implements OnInit {
   loggedInUser: any;
   users = [];
+  userArray = [];
   constructor(private userService: UserService, private tokenService: TokenService) { }
 
   ngOnInit() {
     this.loggedInUser = this.tokenService.GetPayLoad();
     this.GetUsers();
+    this.GetUser();
   }
 
   GetUsers(){
     this.userService.GetsAllUsers().subscribe(data =>{
       _.remove(data.result, {name: this.loggedInUser.name})
       this.users = data.result;
+    })
+  }
+
+  GetUser(){
+    this.userService.GetUserById(this.loggedInUser._id).subscribe(data =>{
+      console.log(data);
     })
   }
 
