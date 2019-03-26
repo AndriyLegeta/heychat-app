@@ -12,4 +12,10 @@ export class UserService {
   GetsAllUsers(): Observable<any>{
    return this.http.get(`${Hosts.API_HOST}/api/hey-chatapp/users`);
   }
+
+  FollowUser(id): Observable<any>{
+    return this.http.post(`${Hosts.API_HOST}/api/hey-chatapp/followe-user`,{
+      userFollowed: id
+    });
+  }
 }
