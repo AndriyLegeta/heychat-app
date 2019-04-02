@@ -7,7 +7,7 @@
     </div>
     <div class="col c12 m8 l9">
       <div class="row">
-        <div class="col s12 m6 l4 cardDiv">
+        <div class="col s12 m6 l4 cardDiv" *ngFor="let user of following">
           <div class="card">
             <a href="">
               <div class="card-image imgDiv">
@@ -16,10 +16,10 @@
             </a>
             <div class="card-action">
               <h3 class="card-title">
-                UserName
+                {{user.userFollowed.name}}
               </h3>
               <p>Country</p>
-              <button class="btn">UnFollow</button>
+              <button class="btn" (click)="unFollowUser(user.userFollowed)">UnFollow</button>
             </div>
           </div>
         </div>

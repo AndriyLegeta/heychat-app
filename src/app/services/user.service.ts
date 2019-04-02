@@ -22,8 +22,14 @@ export class UserService {
   }
 
   FollowUser(id): Observable<any>{
-    return this.http.post(`${Hosts.API_HOST}/api/hey-chatapp/followe-user`,{
+    return this.http.post(`${Hosts.API_HOST}/api/hey-chatapp/follow-user`,{
       userFollowed: id
     });
   }
+  UnFollowUser(userFollowed): Observable<any>{
+    return this.http.post(`${Hosts.API_HOST}/api/hey-chatapp/unfollow-user`,{
+      userFollowed
+    });
+  }
+
 }
